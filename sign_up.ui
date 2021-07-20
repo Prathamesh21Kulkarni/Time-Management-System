@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Sign_up</class>
+ <widget class="QMainWindow" name="Sign_up">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>920</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#topPanel{
+background-color:qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.05 rgba(14, 8, 73, 255), stop:0.36 rgba(17, 106, 145, 255), stop:0.6 rgba(18, 149, 165, 255), stop:0.696429 rgba(11, 144, 234, 255), stop:0.79 rgba(5, 209, 244, 255), stop:0.86 rgba(0, 143, 255, 255), stop:0.935 rgba(55, 57, 239, 255));
+color: white;
+font-style: bold;
+}
+#centralwidget{
+background:url(C:/Users/dell/Downloads/galaxy_expedition_by_kosmicac_degu6ua.png);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QLabel{ color:white;}
+QLineEdit{ border-radius: 3px;}
+QPushButton
+{
+	color: white;
+	background-color: #27a9e3;
+	border-width: 0px;
+	border-radius: 3px;
+}
+QPushButton:hover{background-color: #66c011;}
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>920</width>
+     <height>28</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
