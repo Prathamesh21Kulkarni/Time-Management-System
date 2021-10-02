@@ -526,3 +526,56 @@ void MainWindow::not_all_daily()
         }
     }
 }
+void MainWindow::on_next_task_clicked()
+{
+    int d1, d2, d3;
+    ui->task_name_label->setText("Enter the name for task " + QString::number(count_task + 1));
+    ui->next_task->setEnabled(true);
+    name[count2] = ui->task_name->text();
+    deadline[count2] = ui->deadline->text();
+    d1 = deadline[count2].left(2).toInt();
+    d2 = deadline[count2].mid(3, 2).toInt();
+    d3 = deadline[count2].right(4).toInt();
+    date[count2] = {d1, d2, d3};
+    qDebug() << d1 << " " << d2 << " " << d3;
+    //    interest[count2] = ui->interest->text().toInt();
+    total_no_of_hrs[count2] = ui->total_no_of_hrs->text().toInt();
+    if (count_task >= no_of_task)
+    {
+        QMessageBox::information(this, "Done", "Data for all task's has been recorded. Now go to the time table tab to check your timetable");
+        ui->next_task->setDisabled(true);
+        for (int i = 0; i < no_of_task; i++)
+        {
+            qDebug() << "\n-----------------------------------\n";
+            qDebug() << "Name : " << name[i];
+            no_of_days[i] = getDifference(todays_date, date[i]);
+            qDebug() << "No of days remaining is : " << no_of_days[i];
+            qDebug() << "Interest : " << interest[i];
+            qDebug() << "Total no of hrs : " << total_no_of_hrs[i];
+            no_of_hrs_per_day[i] = total_no_of_hrs[i] / no_of_days[i];
+            qDebug() << "No of hrs per day : " << no_of_hrs_per_day[i];
+            count1 += no_of_hrs_per_day[i];
+        }
+        not_all_daily();
+        //        ui->tableWidget->setHorizontalHeaderLabels(new QTable)
+        ui->tableWidget->setItem(0, 0, new QTableWidgetItem("Data Structures"));
+        ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Data Structures"));
+        ui->tableWidget->setItem(0, 1, new QTableWidgetItem("SDP"));
+        ui->tableWidget->setItem(1, 1, new QTableWidgetItem("SDP"));
+        ui->tableWidget->setItem(0, 2, new QTableWidgetItem("SDP"));
+        ui->tableWidget->setItem(1, 2, new QTableWidgetItem("SDP"));
+        ui->tableWidget->setItem(0, 3, new QTableWidgetItem("Database"));
+        ui->tableWidget->setItem(1, 3, new QTableWidgetItem("Database"));
+        ui->tableWidget->setItem(0, 4, new QTableWidgetItem("Database"));
+        ui->tableWidget->setItem(1, 4, new QTableWidgetItem("Database"));
+        ui->tableWidget->setItem(0, 5, new QTableWidgetItem("Database"));
+        ui->start_time->setEnabled(true);
+    }
+
+    count_task++;
+    count2++;
+    ui->task_name->clear();
+    ui->deadline->clear();
+    //    ui->interest->clear();
+    ui->total_no_of_hrs->clear();
+}
