@@ -442,90 +442,90 @@ int MainWindow::max_element(int a[20], int size)
     }
     return max;
 }
-// void MainWindow::not_all_daily()
-// {
-//     int total_days = max_element(no_of_days, no_of_task);
+void MainWindow::not_all_daily()
+{
+    int total_days = max_element(no_of_days, no_of_task);
 
-//     int t = time_available_daily;
-//     int max = max_element(no_of_hrs_per_day, no_of_task);
-//     if (t < max)
-//     {
-//         //            QMessageBox::critical("Error","You cannot perform this task increase your daily available hours");
-//     }
-//     else if (t >= max)
-//     {
-//         int temp;
-//         Date d_temp;
-//         QString s_temp;
+    int t = time_available_daily;
+    int max = max_element(no_of_hrs_per_day, no_of_task);
+    if (t < max)
+    {
+        //            QMessageBox::critical("Error","You cannot perform this task increase your daily available hours");
+    }
+    else if (t >= max)
+    {
+        int temp;
+        Date d_temp;
+        QString s_temp;
 
-//         for (int i = 0; i < no_of_task; i++)
-//         {
-//             for (int j = 0; j < no_of_task - 1; j++)
-//             {
-//                 if (no_of_days[j] > no_of_days[j + 1])
-//                 {
-//                     temp = no_of_days[j];
-//                     no_of_days[j] = no_of_days[j + 1];
-//                     no_of_days[j + 1] = temp;
+        for (int i = 0; i < no_of_task; i++)
+        {
+            for (int j = 0; j < no_of_task - 1; j++)
+            {
+                if (no_of_days[j] > no_of_days[j + 1])
+                {
+                    temp = no_of_days[j];
+                    no_of_days[j] = no_of_days[j + 1];
+                    no_of_days[j + 1] = temp;
 
-//                     s_temp = name[j];
-//                     name[j] = name[j + 1];
-//                     name[j + 1] = s_temp;
+                    s_temp = name[j];
+                    name[j] = name[j + 1];
+                    name[j + 1] = s_temp;
 
-//                     temp = interest[j];
-//                     interest[j] = interest[j + 1];
-//                     interest[j + 1] = temp;
+                    temp = interest[j];
+                    interest[j] = interest[j + 1];
+                    interest[j + 1] = temp;
 
-//                     //                        temp = priority[j];
-//                     //                        priority[j] = priority[j + 1];
-//                     //                        priority[j + 1] = temp;
+                    //                        temp = priority[j];
+                    //                        priority[j] = priority[j + 1];
+                    //                        priority[j + 1] = temp;
 
-//                     temp = total_no_of_hrs[j];
-//                     total_no_of_hrs[j] = total_no_of_hrs[j + 1];
-//                     total_no_of_hrs[j + 1] = temp;
+                    temp = total_no_of_hrs[j];
+                    total_no_of_hrs[j] = total_no_of_hrs[j + 1];
+                    total_no_of_hrs[j + 1] = temp;
 
-//                     temp = no_of_hrs_per_day[j];
-//                     no_of_hrs_per_day[j] = no_of_hrs_per_day[j + 1];
-//                     no_of_hrs_per_day[j + 1] = temp;
+                    temp = no_of_hrs_per_day[j];
+                    no_of_hrs_per_day[j] = no_of_hrs_per_day[j + 1];
+                    no_of_hrs_per_day[j + 1] = temp;
 
-//                     d_temp = date[j];
-//                     date[j] = date[j + 1];
-//                     date[j + 1] = d_temp;
-//                 }
-//             }
-//         }
+                    d_temp = date[j];
+                    date[j] = date[j + 1];
+                    date[j + 1] = d_temp;
+                }
+            }
+        }
 
-//         for (int i = 1; i <= total_days; i++)
-//         {
+        for (int i = 1; i <= total_days; i++)
+        {
 
-//             qDebug() << "------------------Day " << i << " -------------------";
-//             int available_hrs = time_available_daily;
-//             int flag = 1;
-//             for (int j = 0; j < no_of_task; j++)
-//             {
-//                 if (total_no_of_hrs[j] != 0 && flag != 0)
-//                 {
-//                     if (available_hrs >= total_no_of_hrs[j])
-//                     {
-//                         qDebug() << name[j] << " for " << total_no_of_hrs[j] << " hrs";
-//                         // available_hrs = available_hrs - no_of_hrs_per_day[j];
-//                         total_no_of_hrs[j] = 0;
-//                         flag = 0;
+            qDebug() << "------------------Day " << i << " -------------------";
+            int available_hrs = time_available_daily;
+            int flag = 1;
+            for (int j = 0; j < no_of_task; j++)
+            {
+                if (total_no_of_hrs[j] != 0 && flag != 0)
+                {
+                    if (available_hrs >= total_no_of_hrs[j])
+                    {
+                        qDebug() << name[j] << " for " << total_no_of_hrs[j] << " hrs";
+                        // available_hrs = available_hrs - no_of_hrs_per_day[j];
+                        total_no_of_hrs[j] = 0;
+                        flag = 0;
 
-//                         // cout << " (available time = " << available_hrs << " ) ";
-//                     }
-//                     else
-//                     {
-//                         qDebug() << name[j] << " for " << available_hrs << " hrs";
-//                         total_no_of_hrs[j] = total_no_of_hrs[j] - available_hrs;
-//                         // available_hrs = 0;
-//                         // cout << " (available time = " << available_hrs << " ) ";
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
+                        // cout << " (available time = " << available_hrs << " ) ";
+                    }
+                    else
+                    {
+                        qDebug() << name[j] << " for " << available_hrs << " hrs";
+                        total_no_of_hrs[j] = total_no_of_hrs[j] - available_hrs;
+                        // available_hrs = 0;
+                        // cout << " (available time = " << available_hrs << " ) ";
+                    }
+                }
+            }
+        }
+    }
+}
 void MainWindow::on_next_task_clicked()
 {
     int d1, d2, d3;
