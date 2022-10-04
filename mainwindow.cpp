@@ -557,7 +557,24 @@ void MainWindow::on_next_task_clicked()
             count1 += no_of_hrs_per_day[i];
         }
         not_all_daily();
-        //        ui->tableWidget->setHorizontalHeaderLabels(new QTable)
+        
+//         Earlier
+//        ui->tableWidget->setHorizontalHeaderLabels(new QTable)
+//         ui->tableWidget->setItem(0, 0, new QTableWidgetItem("Data Structures"));
+//         ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Data Structures"));
+//         ui->tableWidget->setItem(0, 1, new QTableWidgetItem("SDP"));
+//         ui->tableWidget->setItem(1, 1, new QTableWidgetItem("SDP"));
+//         ui->tableWidget->setItem(0, 2, new QTableWidgetItem("SDP"));
+//         ui->tableWidget->setItem(1, 2, new QTableWidgetItem("SDP"));
+//         ui->tableWidget->setItem(0, 3, new QTableWidgetItem("Database"));
+//         ui->tableWidget->setItem(1, 3, new QTableWidgetItem("Database"));
+//         ui->tableWidget->setItem(0, 4, new QTableWidgetItem("Database"));
+//         ui->tableWidget->setItem(1, 4, new QTableWidgetItem("Database"));
+//         ui->tableWidget->setItem(0, 5, new QTableWidgetItem("Database"));
+//         ui->start_time->setEnabled(true);
+        
+//         New
+        ui->tableWidget->setHorizontalHeaderLabels(new QTable)
         ui->tableWidget->setItem(0, 0, new QTableWidgetItem("Data Structures"));
         ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Data Structures"));
         ui->tableWidget->setItem(0, 1, new QTableWidgetItem("SDP"));
