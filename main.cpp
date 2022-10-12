@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include <QFile>
-#include <QApplication>
 #include <QStyle>
+#include <QApplication>
+#include <QPushButton>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -11,7 +13,7 @@ int main(int argc, char *argv[])
 
     QString styleSheet { QLatin1String(file.readAll()) };
 
-        //setup stylesheet
+        //Settingup stylesheet object
     a.setStyleSheet(styleSheet);
     w.show();
     return a.exec();
