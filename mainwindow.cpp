@@ -11,13 +11,13 @@
 #include <QDateTime>
 #include <iostream>
 #include <QTableWidget>
+#include <QPushButton>
 float MainWindow::time_available_daily = 0;
 int MainWindow::no_of_task = 0;
 int MainWindow::avg_no_of_time_slots_availalble_daily = 0;
 QString MainWindow::timings[20];
 QString MainWindow::name[20];
 QString MainWindow::deadline[20];
-//Date MainWindow::todays_date = {1, 1, 2001};
 int MainWindow::interest[20];
 int MainWindow::no_of_hrs_per_day[20];
 Date MainWindow::date[20];
@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->current_task->setVisible(false);
     ui->start_time->setDisabled(true);
     //----------------------------Charts---------------------------------//
-    //---------Bar Chart------------------//
+    //---------Bar Chart------------------------------------------------//
     QBarSet *set0 = new QBarSet("Task1");
     QBarSet *set1 = new QBarSet("Task2");
     QBarSet *set2 = new QBarSet("Task3");
@@ -538,11 +538,10 @@ void MainWindow::on_next_task_clicked()
     d3 = deadline[count2].right(4).toInt();
     date[count2] = {d1, d2, d3};
     qDebug() << d1 << " " << d2 << " " << d3;
-    //    interest[count2] = ui->interest->text().toInt();
     total_no_of_hrs[count2] = ui->total_no_of_hrs->text().toInt();
     if (count_task >= no_of_task)
     {
-        QMessageBox::information(this, "Done", "Data for all task's has been recorded. Now go to the time table tab to check your timetable");
+        QMessageBox::information(this, "Done", "Data for all task's has been recorded. To check the timetable go to the option your timetable ");
         ui->next_task->setDisabled(true);
         for (int i = 0; i < no_of_task; i++)
         {
@@ -577,10 +576,10 @@ void MainWindow::on_next_task_clicked()
         ui->tableWidget->setHorizontalHeaderLabels(new QTable)
         ui->tableWidget->setItem(0, 0, new QTableWidgetItem("Data Structures"));
         ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Data Structures"));
-        ui->tableWidget->setItem(0, 1, new QTableWidgetItem("SDP"));
-        ui->tableWidget->setItem(1, 1, new QTableWidgetItem("SDP"));
-        ui->tableWidget->setItem(0, 2, new QTableWidgetItem("SDP"));
-        ui->tableWidget->setItem(1, 2, new QTableWidgetItem("SDP"));
+        ui->tableWidget->setItem(0, 1, new QTableWidgetItem("Software Developement Project"));
+        ui->tableWidget->setItem(1, 1, new QTableWidgetItem("Software Developement Project"));
+        ui->tableWidget->setItem(0, 2, new QTableWidgetItem("Software Developement Project"));
+        ui->tableWidget->setItem(1, 2, new QTableWidgetItem("Software Developement Project"));
         ui->tableWidget->setItem(0, 3, new QTableWidgetItem("Database"));
         ui->tableWidget->setItem(1, 3, new QTableWidgetItem("Database"));
         ui->tableWidget->setItem(0, 4, new QTableWidgetItem("Database"));
