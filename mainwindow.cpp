@@ -73,6 +73,8 @@ MainWindow::MainWindow(QWidget *parent)
     QBarSet *set2 = new QBarSet("Task3");
     QBarSet *set3 = new QBarSet("Task4");
     QBarSet *set4 = new QBarSet("Task5");
+        
+    // sample data for testing purpose
     *set0 << 10 << 20 << 30 << 40 << 50 << 60;
     *set1 << 50 << 70 << 40 << 45 << 80 << 70;
     *set2 << 30 << 50 << 80 << 13 << 80 << 50;
@@ -107,6 +109,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartViewBar->setParent(ui->chart1);
     //--------------Pie Chart------------------//
     QPieSeries *seriesPie = new QPieSeries();
+     
+    // sample data for testing purpose
     seriesPie->append("Task1", 10);
     seriesPie->append("Task2", 20);
     seriesPie->append("Task3", 30);
@@ -127,6 +131,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartViewPie->setParent(ui->chart2);
     //---------Line Chart------------------//
     QLineSeries *seriesLine = new QLineSeries();
+        
+    // sample data for testing purpose
     seriesLine->append(0, 26);
     seriesLine->append(20, 40);
     seriesLine->append(30, 50);
@@ -143,6 +149,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartViewLine->setParent(ui->chart3);
 
     QLineSeries *seriesLine_1 = new QLineSeries();
+        
+    // sample data for testing purpose
     seriesLine_1->append(0, 10);
     seriesLine_1->append(40, 30);
     seriesLine_1->append(30, 60);
@@ -159,6 +167,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartViewLine_1->setParent(ui->chart4);
 
     QLineSeries *seriesLine_2 = new QLineSeries();
+        
+    // sample data for testing purpose
     seriesLine_2->append(0, 5);
     seriesLine_2->append(10, 20);
     seriesLine_2->append(30, 50);
@@ -175,6 +185,8 @@ MainWindow::MainWindow(QWidget *parent)
     chartViewLine_2->setParent(ui->chart5);
 
     QLineSeries *seriesLine_3 = new QLineSeries();
+        
+    // sample data for testing purpose
     seriesLine_3->append(0, 20);
     seriesLine_3->append(20, 60);
     seriesLine_3->append(60, 80);
