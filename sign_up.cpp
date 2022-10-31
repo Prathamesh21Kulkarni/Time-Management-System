@@ -15,6 +15,7 @@ Sign_up::Sign_up(QWidget *parent) :
     db1.setUserName("root");
     db1.setPassword("");
 
+    // checking for sign-up
     if(db1.open())
     {
         qDebug()<<"Sign up Connected";
