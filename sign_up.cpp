@@ -15,7 +15,11 @@ Sign_up::Sign_up(QWidget *parent) :
     db1.setUserName("root");
     db1.setPassword("");
 
+
+    // checking for successful signup
+=======
     // checking for sign-up
+
     if(db1.open())
     {
         qDebug()<<"Sign up Connected";
@@ -26,8 +30,11 @@ Sign_up::Sign_up(QWidget *parent) :
     }
     timer_1s = new QTimer(this);
     QObject::connect(timer_1s, SIGNAL(timeout()),this,SLOT(updateTime()));
+        
+    // Adding a delay of 1 second
     timer_1s->start(1000);
 }
+
 void Sign_up::updateTime(){
     spui->lbl_time->setText(QTime::currentTime().toString("hh : mm : ss"));
 }
